@@ -1,38 +1,7 @@
-![logo](assets/title.png)
+# A more orange variant of the srcery theme.
 
-[![Build Status](https://travis-ci.org/srcery-colors/srcery-vim.svg?branch=master)](https://travis-ci.org/srcery-colors/srcery-vim)
+Originally a fork of [srcery-vim](https://github.com/srcery-colors/srcery-vim), I have done very little. All cred to my predecessors!
 
-Color scheme with clearly defined contrasting colors and a slightly earthy tone.
-
-## Requirements
-
-### GUI
-You don’t need to do anything for this colorscheme to work in GVim or MacVim.
-
-### TUI
-To use Srcery in the terminal you need to change your terminal emulator’s
-so-called “ASCII” colors to the ones in the table below. There's a list of
-terminal configurations in the
-[srcery-terminal](https://github.com/srcery-colors/srcery-terminal) repository.
-
-TERMCOL       | NR | HEX     | RGB
-------------- | -- | ------- | ------------
-black         |  0 | #1C1B19 | 28,  27,  25
-red           |  1 | #EF2F27 | 239, 47, 39
-green         |  2 | #519F50 | 81,  159, 80
-yellow        |  3 | #FBB829 | 251, 184, 41
-blue          |  4 | #2C78BF | 44, 120, 191
-magenta       |  5 | #E02C6D | 224, 44,  109
-cyan          |  6 | #0AAEB3 | 10, 174, 179
-white         |  7 | #918175 | 145, 129, 117
-brightblack   | 8  | #2D2C29 | 45, 44, 41
-brightred     | 9  | #F75341 | 247, 83, 65
-brightgreen   | 10 | #98BC37 | 152, 188, 55
-brightyellow  | 11 | #FED06E | 254, 208, 110
-brightblue    | 12 | #68A8E4 | 104, 168, 228
-brightmagenta | 13 | #FF5C8F | 255, 92, 143
-brightcyan    | 14 | #53FDE9 | 83, 253, 233
-brightwhite   | 15 | #FCE8C3 | 252, 232, 195
 
 ## Installation
 
@@ -44,27 +13,27 @@ Put `srcery.vim` in `~/.vim/colors/` (on unix-like systems) or `%userprofile%\vi
 Vim 8 has native support for loading plugins. All you need to do to is to clone
 this repository into `~/.vim/plug/default/opt`.
 
-    git clone https://github.com/srcery-colors/srcery-vim ~/.vim/plug/default/opt
+    git clone https://github.com/korsbo/srcery-vim ~/.vim/plug/default/opt
 
 The same works for NeoVim, but you have to clone it into a path where NeoVim can
 find it.
 
-    git clone https://github.com/srcery-colors/srcery-vim ~/.config/nvim/plug/default/opt
+    git clone https://github.com/korsbo/srcery-vim ~/.config/nvim/plug/default/opt
 
 ### [dein.vim](https://github.com/Shougo/dein.vim)
 ```vim
-call dein#add('srcery-colors/srcery-vim')
+call dein#add('korsbo/srcery-vim')
 ```
 
 ### [vim-pathogen](https://github.com/tpope/vim-pathogen)
 ```shell
 cd ~/.vim/bundle
-git clone https://github.com/srcery-colors/srcery-vim
+git clone https://github.com/korsbo/srcery-vim
 ```
 
 ### [vim-plug](https://github.com/junegunn/vim-plug)
 ```vim
-Plug 'srcery-colors/srcery-vim'
+Plug 'korsbo/srcery-vim'
 ```
 
 ## Configuration
@@ -204,21 +173,6 @@ xgrey3       | 237  | #3A3A3A | 58, 58, 58
 xgrey4       | 238  | #444444 | 68, 68, 68
 xgrey5       | 239  | #4E4E4E | 78, 78, 78
 
-
-## Attribution
-
-This project started as essentially a palette swap of
-[Gruvbox](https://github.com/morhetz/gruvbox) and all credit goes to the
-maintainers of that fantastic color scheme. I wanted something a bit sharper, but
-I loved the syntax color choices of Gruvbox. I also tried to make the theme as
-simple to use as possible, which was inspired by
-[Flattened](https://github.com/romainl/flattened). Other themes that influenced
-Srcery:
-
- * [Base16](http://chriskempson.com/projects/base16/)
- * [Badwolf](https://github.com/sjl/badwolf)
- * [Jellybeans](https://github.com/nanotech/jellybeans.vim)
- * [Molokai](https://github.com/tomasr/molokai)
  
 ## Troubleshooting
 
@@ -244,7 +198,7 @@ For other terminals, replace `xterm-termite` with the relevant
 terminal type. (stored in `$TERM`).
 
 See [Arch wiki](https://wiki.archlinux.org/index.php/Tmux#24-bit_color)
-and this [issue](https://github.com/srcery-colors/srcery-vim/issues/36).
+and this [issue](https://github.com/korsbo/srcery-vim/issues/36).
 
 ## Contributors
 
@@ -258,4 +212,4 @@ and this [issue](https://github.com/srcery-colors/srcery-vim/issues/36).
 
 ### Emacs
 
- Check out [srcery-emacs](https://github.com/srcery-colors/srcery-emacs)
+ Check out [srcery-emacs](https://github.com/korsbo/srcery-emacs)

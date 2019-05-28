@@ -1,4 +1,3 @@
-" 'srcery.vim' -- Vim color scheme.
 " Maintainer:   Roosta (mail@roosta.sh)
 " Description:  Colorscheme that focus ease of use and clearly defined contrasting colors with a slightly earthy tone.
 " Original Source: https://github.com/morhetz/gruvbox
@@ -19,9 +18,11 @@ if !has('gui_running') && &t_Co != 256
 endif
 
 " Palette {{{
+"
 
 let s:black          = ['#1C1B19', 0]
 let s:red            = ['#EF2F27', 1]
+let s:indigo = ["#5573A3", 4]
 let s:green          = ['#519F50', 2]
 let s:yellow         = ['#FBB829', 3]
 let s:blue           = ['#2C78BF', 4]
@@ -30,6 +31,7 @@ let s:cyan           = ['#0AAEB3', 6]
 let s:white          = ['#918175', 7]
 let s:bright_black   = ['#2D2C29', 8]
 let s:bright_red     = ['#F75341', 9]
+let s:bright_red  = ["#5573A3", 4]
 let s:bright_green   = ['#98BC37', 10]
 let s:bright_yellow  = ['#FED06E', 11]
 let s:bright_blue    = ['#68A8E4', 12]
@@ -38,7 +40,7 @@ let s:bright_cyan    = ['#53FDE9', 14]
 let s:bright_white   = ['#FCE8C3', 15]
 
 " xterm colors.
-let s:orange        = ['#FF5F00', 202]
+let s:orange        = ['#D75F00', 166]
 let s:bright_orange = ['#FF8700', 208]
 let s:hard_black    = ['#121212', 233]
 let s:xgray1        = ['#262626', 235]
@@ -161,26 +163,26 @@ endfunction
 
 " memoize common hi groups
 call s:HL('SrceryWhite', s:white)
-call s:HL('SrceryRed', s:red)
+call s:HL('SrceryRed', s:orange)
 call s:HL('SrceryGreen', s:green)
 call s:HL('SrceryYellow', s:yellow)
 call s:HL('SrceryBlue', s:blue)
-call s:HL('SrceryMagenta', s:magenta)
+call s:HL('SrceryMagenta', s:orange)
 call s:HL('SrceryCyan', s:cyan)
 call s:HL('SrceryBlack', s:black)
 
-call s:HL('SrceryRedBold', s:red, s:none, s:bold)
+call s:HL('SrceryRedBold', s:orange, s:none, s:bold)
 call s:HL('SrceryGreenBold', s:green, s:none, s:bold)
 call s:HL('SrceryYellowBold', s:yellow, s:none, s:bold)
 call s:HL('SrceryBlueBold', s:blue, s:none, s:bold)
-call s:HL('SrceryMagentaBold', s:magenta, s:none, s:bold)
+call s:HL('SrceryMagentaBold', s:orange, s:none, s:bold)
 call s:HL('SrceryCyanBold', s:cyan, s:none, s:bold)
 
-call s:HL('SrceryBrightRed', s:bright_red, s:none)
+call s:HL('SrceryBrightRed', s:bright_orange, s:none)
 call s:HL('SrceryBrightGreen', s:bright_green, s:none)
 call s:HL('SrceryBrightYellow', s:bright_yellow, s:none)
 call s:HL('SrceryBrightBlue', s:bright_blue, s:none)
-call s:HL('SrceryBrightMagenta', s:bright_magenta, s:none)
+call s:HL('SrceryBrightMagenta', s:bright_orange, s:none)
 call s:HL('SrceryBrightCyan', s:bright_cyan, s:none)
 call s:HL('SrceryBrightBlack', s:bright_black, s:none)
 call s:HL('SrceryBrightWhite', s:bright_white)
@@ -203,8 +205,8 @@ if has('nvim')
   let g:terminal_color_0 = s:black[0]
   let g:terminal_color_8 = s:bright_black[0]
 
-  let g:terminal_color_1 = s:red[0]
-  let g:terminal_color_9 = s:bright_red[0]
+  let g:terminal_color_1 = s:orange[0]
+  let g:terminal_color_9 = s:bright_orange[0]
 
   let g:terminal_color_2 = s:green[0]
   let g:terminal_color_10 = s:bright_green[0]
@@ -215,8 +217,8 @@ if has('nvim')
   let g:terminal_color_4 = s:blue[0]
   let g:terminal_color_12 = s:bright_blue[0]
 
-  let g:terminal_color_5 = s:magenta[0]
-  let g:terminal_color_13 = s:bright_magenta[0]
+  let g:terminal_color_5 = s:orange[0]
+  let g:terminal_color_13 = s:bright_orange[0]
 
   let g:terminal_color_6 = s:cyan[0]
   let g:terminal_color_14 = s:bright_cyan[0]
@@ -249,10 +251,10 @@ if v:version >= 700
     " Tab pages line filler
     call s:HL('TabLineFill', s:green, s:none)
     " Active tab page label
-    call s:HL('TabLineSel', s:red, s:none, s:bold)
+    call s:HL('TabLineSel', s:orange, s:none, s:bold)
   else
     call s:HL('TabLineFill', s:green, s:black)
-    call s:HL('TabLineSel', s:red, s:black, s:bold)
+    call s:HL('TabLineSel', s:orange, s:black, s:bold)
   endif
 
   " Not active tab page label
@@ -261,9 +263,9 @@ if v:version >= 700
   " Match paired bracket under the cursor
   "
   if g:srcery_inverse_match_paren == 1
-    call s:HL('MatchParen', s:bright_magenta, s:none, s:inverse . s:bold)
+    call s:HL('MatchParen', s:bright_orange, s:none, s:inverse . s:bold)
   else
-    call s:HL('MatchParen', s:bright_magenta, s:none, s:bold)
+    call s:HL('MatchParen', s:bright_orange, s:none, s:bold)
   endif
 endif
 
@@ -327,7 +329,7 @@ hi! link Directory SrceryGreenBold
 hi! link Title SrceryGreenBold
 
 " Error messages on the command line
-call s:HL('ErrorMsg', s:bright_white, s:red)
+call s:HL('ErrorMsg', s:bright_white, s:orange)
 " More prompt: -- More --
 hi! link MoreMsg SrceryYellowBold
 " Current mode message: -- INSERT --
@@ -382,7 +384,7 @@ else
   call s:HL('Todo', s:bright_white, s:black, s:bold . s:italic)
 endif
 
-call s:HL('Error', s:bright_white, s:red, s:bold)
+call s:HL('Error', s:bright_white, s:orange, s:bold)
 
 " String constant: "this is a string"
 call s:HL('String',  s:bright_green)
@@ -451,7 +453,7 @@ if v:version >= 700
   " Popup menu: normal item
   call s:HL('Pmenu', s:bright_white, s:bright_black)
   " Popup menu: selected item
-  call s:HL('PmenuSel', s:bright_white, s:magenta, s:bold)
+  call s:HL('PmenuSel', s:bright_white, s:orange, s:bold)
 
   if g:srcery_transparent_background == 1 && !has('gui_running')
     " Popup menu: scrollbar
@@ -468,12 +470,12 @@ endif
 " Diffs: {{{
 
 if g:srcery_transparent_background == 1 && !has('gui_running')
-  call s:HL('DiffDelete', s:red, s:none)
+  call s:HL('DiffDelete', s:orange, s:none)
   call s:HL('DiffAdd',    s:green, s:none)
   call s:HL('DiffChange', s:cyan, s:none)
   call s:HL('DiffText',   s:yellow, s:none)
 else
-  call s:HL('DiffDelete', s:red, s:black)
+  call s:HL('DiffDelete', s:orange, s:black)
   call s:HL('DiffAdd',    s:green, s:black)
   call s:HL('DiffChange', s:cyan, s:black)
   call s:HL('DiffText',   s:yellow, s:black)
@@ -490,7 +492,7 @@ if has('spell')
   " Wrong spelling for selected region
   call s:HL('SpellLocal', s:none, s:none, s:undercurl, s:cyan)
   " Rare word
-  call s:HL('SpellRare',  s:none, s:none, s:undercurl, s:magenta)
+  call s:HL('SpellRare',  s:none, s:none, s:undercurl, s:orange)
 endif
 
 " }}}
@@ -563,7 +565,7 @@ hi! link gitcommitDiscardedFile SrceryRed
 " }}}
 " Asynchronous Lint Engine: {{{
 
-call s:HL('ALEError', s:none, s:none, s:undercurl, s:red)
+call s:HL('ALEError', s:none, s:none, s:undercurl, s:orange)
 call s:HL('ALEWarning', s:none, s:none, s:undercurl, s:yellow)
 call s:HL('ALEInfo', s:none, s:none, s:undercurl, s:blue)
 
@@ -988,7 +990,7 @@ hi! link makeCommands SrceryBrightWhite
 hi! link makeTarget SrceryYellow
 " }}}
 " Misc: {{{
-call s:HL('shParenError', s:bright_white, s:bright_red)
+call s:HL('shParenError', s:bright_white, s:bright_orange)
 " }}}
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker :
